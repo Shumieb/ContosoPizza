@@ -1,0 +1,38 @@
+@ContosoPizza_HostAddress = https://localhost:7021
+
+
+GET {{ContosoPizza_HostAddress}}/api/pizza
+
+###
+
+@id=3
+GET {{ContosoPizza_HostAddress}}/api/pizza/{{id}}
+
+###
+
+POST {{ContosoPizza_HostAddress}}/api/pizza
+Content-Type: application/json
+
+{
+  "name": "Vegi 2",
+  "isGlutenFree": true
+}
+
+###
+
+@id=4
+DELETE {{ContosoPizza_HostAddress}}/api/pizza/{{id}}
+
+###
+
+@id=3
+PUT {{ContosoPizza_HostAddress}}/api/pizza/id?id={{id}}
+Content-Type: application/json
+
+{
+  "id": 3, 
+  "name": "Pepperoni", 
+  "isGlutenFree": false
+}
+
+###
